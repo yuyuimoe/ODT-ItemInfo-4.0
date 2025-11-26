@@ -620,7 +620,7 @@ public static class Utils
 			    }
 		    }
 
-		    if (_config.BlacklistedTradersFromRarityCalc.Contains(barter.TraderId)) // Exclude Fence from rarity calc
+		    if (!_config.BlacklistedTradersFromRarityCalc.Contains(barter.TraderId)) // Exclude blacklisted traders from rarity calc
 		    {
 			    if (isBarter)
 				    rarityArray.Add(barter.BarterLoyaltyLevel + 1);

@@ -56,7 +56,7 @@ public class ModConfig
 	}
 	
 	[JsonPropertyName("RarityRecolorBlacklist")]
-	public List<string> RarityRecolorBlacklist { get; set; }
+	public List<MongoId> RarityRecolorBlacklist { get; set; }
 	[JsonPropertyName("ArmorInfo")]
 	public ArmorInfo ModArmorInfo { get; set; } = new();
 	public class ArmorInfo
