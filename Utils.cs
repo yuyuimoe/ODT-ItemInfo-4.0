@@ -66,7 +66,7 @@ public static class Utils
 		_hideoutAreas = databaseService.GetHideout().Areas;
 		_hideoutSettingsBase = databaseService.GetHideout().Settings;
 		_config = config;
-
+		
 		foreach (string lang in _translation.Language.Keys)
 		{
 			if (!_serverSupportedLocale.Contains(lang)) 

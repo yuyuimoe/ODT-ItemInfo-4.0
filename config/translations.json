@@ -83,7 +83,7 @@
 		"BANNED": "ЗАПРЕЩЁН",
 		"AsPartOf": "как часть"
 	},
-	"ch": {
+	"zh-cn": {
 		"_translation credit - long120611": "https://hub.sp-tarkov.com/user/5970-long120611/",
 		"Bought": "购买渠道",
 		"lv": "等级",
@@ -123,50 +123,9 @@
 		"BANNED": "禁用",
 		"AsPartOf": "作為一部分"
 	},
-	"cz": {
+	"cs": {
 		"": "",
 		"": ""
-	},
-	"es-mx": {
-		"_translation credit - HyperNeonX": "https://hub.sp-tarkov.com/user/23099-hyperneonx/",
-		"Bought": "Comprado",
-		"lv": "nv.",
-		"ItemValue": "Valor del ítem",
-		"at": "@",
-		"Traded": "Negociado",
-		"Armorclass": "Clase de blindaje",
-		"Effectivedurability": "Durabilidad efectiva",
-		"Max": "Max.",
-		"Repairdegradation": "Degradación con la reparación",
-		"Slotefficiency": "Eficacia de las ranuras",
-		"Fleaprice": "Precio en Tianguis",
-		"Valuation1": "Precio con ",
-		"Valuation2": "",
-		"Found": "Encontrado",
-		"Tool": "Herramienta",
-		"Part": "Parte",
-		"Need": "Necesita",
-		"Crafted": "Elaborado",
-		"Spawnchance": "Probabilidad de spawn",
-		"peritem": "por artículo",
-		"AmbientVolume": "Volumen ambiental",
-		"Compressor": "Compresor",
-		"Gain": "Ganancia",
-		"Treshold": "Limite",
-		"Boost": "Impluso",
-		"ResonanceFilter": "Resonancia & Filtro",
-		"Distortion": "Distorsión",
-		"COMMON": "Comun",
-		"RARE": "Raro",
-		"EPIC": "Epico",
-		"LEGENDARY": "Legendario",
-		"UBER": "Uber",
-		"UNOBTAINIUM": "Extraordinario",
-		"OVERPOWERED": "Overpowered",
-		"CUSTOM": "Personalizado",
-		"UNKNOWN": "Desconocido",
-		"BANNED": "PROHIBIDO",
-		"AsPartOf": "como parte de"
 	},
 	"es": {
 		"_translation credit - HyperNeonX": "https://hub.sp-tarkov.com/user/23099-hyperneonx/",
@@ -180,7 +139,7 @@
 		"Max": "Max.",
 		"Repairdegradation": "Degradación con la reparación",
 		"Slotefficiency": "Eficacia de las ranuras",
-		"Fleaprice": "Precio en Mercadillo",
+		"Fleaprice": "Precio en Tianguis",
 		"Valuation1": "Precio con ",
 		"Valuation2": "",
 		"Found": "Encontrado",
@@ -250,7 +209,7 @@
 		"BANNED": "INTERDIT",
 		"AsPartOf": "dans le cadre de"
 	},
-	"ge": {
+	"de": {
 		"_translation credit - Cold": "https://hub.sp-tarkov.com/user/30341-coldweather/",
 		"Bought": "Kaufen",
 		"lv": "lv.",
@@ -299,7 +258,7 @@
 		"": "",
 		"": ""
 	},
-	"jp": {
+	"ja": {
 		"_translation credit - Midori ": "https://hub.sp-tarkov.com/user/30741-midori/",
 		"Bought": "購入",
 		"lv": "lv.",
@@ -339,7 +298,7 @@
 		"BANNED": "フリマ不可",
 		"AsPartOf": "パーツ"
 	},
-	"kr": {
+	"ko": {
 		"_translation credit - hmh5027": "https://hub.sp-tarkov.com/user/29456-hmh5027/",
 		"Bought": "구입",
 		"ItemValue": "항목 값",
@@ -381,18 +340,6 @@
 		"AsPartOf": "의 일부로"
 	},
 	"pl": {
-		"": "",
-		"": ""
-	},
-	"po": {
-		"": "",
-		"": ""
-	},
-	"sk": {
-		"": "",
-		"": ""
-	},
-	"tu": {
 		"": "",
 		"": ""
 	}
