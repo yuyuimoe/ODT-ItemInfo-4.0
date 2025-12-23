@@ -222,14 +222,9 @@ public static class Utils
 		    {
 			    case "prepend":
 				    localeData[itemId + " " + type] = addToName + originalName;
-				    _locales[lang][itemId + " " + type] = addToName + originalName;
 				    break;
 			    case "append":
 				    localeData[itemId + " " + type] = originalName + addToName;
-				    _locales[lang][itemId + " " + type] = originalName + addToName;
-				    break;
-			    default:
-				    localeData[itemId + " " + type] = _locales[lang][itemId + " " + type];
 				    break;
 		    }
 		    
@@ -257,6 +252,17 @@ public static class Utils
 								itemId,
 								addToName,
 								originalName);
+
+		    switch (place)
+		    {
+			    case "append":
+				    _locales[lang][itemId + " Name"] = originalName + addToName;
+				    break;
+			    case "prepend":
+				    _locales[lang][itemId + " Name"] = addToName + originalName;
+				    break;
+		    }
+		    
 	    }
     }
     
@@ -302,6 +308,16 @@ public static class Utils
 								itemId,
 								addToShortName,
 								originalShortName);
+		    
+		    switch (place)
+		    {
+			    case "append":
+				    _locales[lang][itemId + " ShortName"] = originalShortName + addToShortName;
+				    break;
+			    case "prepend":
+				    _locales[lang][itemId + " ShortName"] = addToShortName + originalShortName;
+				    break;
+		    }
 	    }
     }
     
@@ -382,6 +398,9 @@ public static class Utils
 								itemId,
 								"<b><color=" + tiersHexCode + ">",
 								_locales[lang][itemId + " Name"] + "</color></b>");
+
+		    _locales[lang][itemId + " Name"] =
+			    "<b><color=" + tiersHexCode + ">" + _locales[lang][itemId + " Name"] + "</color></b>";
 	    }
     }
     
@@ -403,6 +422,9 @@ public static class Utils
 								itemId,
 								"<color=" + tiersHexCode + ">",
 								_locales[lang][itemId + " ShortName"] + "</color>");
+		    
+		    _locales[lang][itemId + " ShortName"] =
+			    "<color=" + tiersHexCode + ">" + _locales[lang][itemId + " ShortName"] + "</color>";
 	    }
     }
 

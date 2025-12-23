@@ -695,8 +695,8 @@ public class ItemInfo(
 		    
 		    Utils.RefreshName(itemId, UserLocale);
 		    Utils.RefreshShortName(itemId, UserLocale);
-		    
-		    itemName.Append(Utils.GetItemName(kvp.Key, UserLocale));
+
+		    itemName.Append(Utils._locales[UserLocale][itemId + " Name"]);
 		    itemName.Append(" | " + Utils.GetItemShortName(kvp.Key, UserLocale));
 
 #if DEBUG
@@ -782,11 +782,7 @@ public class ItemInfo(
 				                             itemProperties.PenetrationPower +
 				                             ")");
 
-				    Utils.AddToName(itemId,
-					    addToName.ToString(),
-					    "append");
-
-				    Utils._locales[UserLocale][itemId + " Name"] += addToName;
+				    Utils.AddToName(itemId, addToName.ToString(), "append");
 			    } 
 			    else if (itemProperties.Name != null &&
 			             itemProperties.Name.Contains("ammo_box"))
@@ -805,11 +801,7 @@ public class ItemInfo(
 				                             ammoProperties.PenetrationPower +
 				                             ")");
 
-				    Utils.AddToName(itemId,
-									addToName.ToString(),
-									"append");
-
-				    Utils._locales[UserLocale][itemId + " Name"] += addToName;
+				    Utils.AddToName(itemId, addToName.ToString(), "append");
 			    }
 		    }
 		    
@@ -859,20 +851,10 @@ public class ItemInfo(
 												")");
 
 				    if (Config.ModArmorInfo.AddArmorToName)
-				    {
-					    Utils.AddToName(itemId,
-										addToName.ToString(),
-										"append");
-					    Utils._locales[UserLocale][itemId + " Name"] += addToName;
-				    }
+					    Utils.AddToName(itemId, addToName.ToString(), "append");
 
 				    if (Config.ModArmorInfo.AddArmorToShortName)
-				    {
-					    Utils.AddToShortName(itemId,
-											addToShortName.ToString(),
-											"append");
-					    Utils._locales[UserLocale][itemId + " ShortName"] += addToShortName;
-				    }
+					    Utils.AddToShortName(itemId, addToShortName.ToString(), "append");
 			    }
 		    }
 		    
@@ -1053,18 +1035,10 @@ public class ItemInfo(
 				    if (!string.IsNullOrEmpty(mark))
 				    {
 					    if (Config.ModMarkValuableItems.AddToShortName)
-					    {
 						    Utils.AddToShortName(itemId, mark + " ", "prepend");
-						    Utils._locales[UserLocale][itemId + " ShortName"] = mark + 
-							    " " +
-								Utils._locales[UserLocale][itemId + " ShortName"];
-					    }
 
 					    if (Config.ModMarkValuableItems.AddToName)
-					    {
 						    Utils.AddToName(itemId, " " + mark, "append");
-						    Utils._locales[UserLocale][itemId + " Name"] += " " + mark;
-					    }
 				    }
 			    }
 		    }
