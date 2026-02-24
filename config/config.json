@@ -138,7 +138,7 @@
 	},
 	"useBSGStaticFleaBanList": {
 		"_description": "For compatibility reasons with other mods that modify flea banned items",
-		"enabled": false
+		"enabled": true
 	},
 	"SoftcoreAmmoStackMultiFix": {
 		"_description": "Enable if using Softcore's Bigger_Ammo_Stacks",
