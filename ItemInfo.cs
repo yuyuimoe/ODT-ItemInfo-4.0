@@ -744,15 +744,15 @@ public class ItemInfo(
 				    else
 					    traderPrice = 0;
 				    
-				    if (itemRarity is 0 or 7)
-					    itemRarity = BsgBlacklist.Contains(itemId)
-						    ? 7
-						    : Utils.BarterInfoGenerator(Utils.BarterResolver(itemId)).rarityArray.Min();
-
 				    if (itemRarity != 7)
 					    fleaPriceString = "";
 			    }
 		    }
+
+		    // Flea banned and not sold by traders
+		    if (isBanned &&
+		        rarityArray.Min() == 0)
+			    itemRarity = 9;
 			    
 		    // BulletStatsInName
 		    if (Config.ModBulletStatsInName.Enabled)
@@ -1171,7 +1171,7 @@ public class ItemInfo(
 						    itemProperties.BackgroundColor = TiersHex["CUSTOM"];
 						    tiersHexcode.Clear().Append(TiersHex["CUSTOM"]);
 						    break;
-					    default: // itemRarity >= 9 or itemRarity == 0
+					    default: // itemRarity >= 9 or itemRarity == 0 with fallback disabled
 						    tier = i18n["CUSTOM2"];
 						    itemProperties.BackgroundColor = TiersHex["CUSTOM2"];
 						    tiersHexcode.Clear().Append(TiersHex["CUSTOM2"]);
@@ -1189,18 +1189,7 @@ public class ItemInfo(
 						    itemValue = Math.Round(itemValue / itemSlots);
 
 					    if (templateItem.Parent == "543be5cb4bdc2deb348b4568")
-					    {
-						    IEnumerable<StackSlot>? stackSlots = itemProperties.StackSlots;
-						    List<StackSlot>? stackSlotsList = stackSlots?.ToList();
-
-						    if (stackSlotsList is not null)
-						    {
-							    double count = stackSlotsList[0].MaxCount ?? 0;
-							    double value = Utils.GetItemBestTrader(itemId).price ?? 0;
-
-							    itemValue = value * count;
-						    }
-					    }
+						    itemValue = traderPrice;
 
 					    switch (itemValue)
 					    {
