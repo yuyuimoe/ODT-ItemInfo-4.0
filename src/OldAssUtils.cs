@@ -16,7 +16,7 @@ using SPTarkov.Server.Core.Utils.Json;
 
 namespace ItemInfo;
 
-public static class Utils
+public static class OldAssUtils
 {
 	private static DatabaseService _databaseService = null!;
 	private static LocaleService _localeService = null!;

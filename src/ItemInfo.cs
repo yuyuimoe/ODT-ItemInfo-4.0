@@ -25,21 +25,6 @@ using SPTarkov.Server.Core.Utils;
 
 namespace ItemInfo;
 
-public record ModMetadata : AbstractModMetadata
-{
-    public override string ModGuid { get; init; } = "com.odt.iteminfo";
-    public override string Name { get; init; } = "ItemInfo";
-    public override string Author { get; init; } = "ODT";
-    public override List<string>? Contributors { get; init; }
-    public override SemanticVersioning.Version Version { get; init; } = new("2.0.14");
-    public override SemanticVersioning.Range SptVersion { get; init; } = new("~4.0.0");
-    public override List<string>? Incompatibilities { get; init; }
-    public override Dictionary<string, SemanticVersioning.Range>? ModDependencies { get; init; }
-    public override string? Url { get; init; }
-    public override bool? IsBundleMod { get; init; }
-    public override string License { get; init; } = "MIT";
-}
-
 // We want to load after PostDBModLoader is complete and all other mods, so we set our type priority to that, plus 200.
 [Injectable(TypePriority = OnLoadOrder.PostSptModLoader + 2)]
 public class ItemInfo(
