@@ -49,6 +49,8 @@ public sealed class ItemDataCache(
 
     public FrozenDictionary<MongoId, FrozenSet<MongoId>> TemplateBaseClasses { get; private set; }
 
+    public FrozenDictionary<MongoId, HeadsetInfo> TemplateHeadsetInfo { get; private set; }
+
     public Task OnLoad()
     {
         var watch = new Stopwatch();
@@ -58,8 +60,13 @@ public sealed class ItemDataCache(
         var locales = db.GetLocales().Languages;
         var handbook = db.GetHandbook().Items;
 
+        var headphones = items
+            .Where(i => i.Value.Parent == BaseClasses.HEADPHONES)
+            .ToFrozenDictionary();
+
         TemplateItemSlims = BuildTemplateItemSlims(items);
         TemplateBaseClasses = BuildTemplateBaseClasses();
+        TemplateHeadsetInfo = BuildTemplateHeadsetInfo(headphones);
         FleaPrices = BuildFleaPrices();
         ItemsWithHandbookEntry = BuildItemsWithHandbook(handbook);
         HandbookPrices = BuildHandbookPrices(handbook);
@@ -83,6 +90,21 @@ public sealed class ItemDataCache(
                 Grids: i.Value.Properties?.Grids?.ToImmutableList() ?? []
             ))
             .ToFrozenDictionary(k => k.TemplateId);
+
+    private FrozenDictionary<MongoId, HeadsetInfo> BuildTemplateHeadsetInfo(
+        FrozenDictionary<MongoId, TemplateItem> headphones
+    ) =>
+        headphones
+            .Select(i => new HeadsetInfo(
+                i.Key,
+                i.Value.Properties!.AmbientCompressorSendLevel ?? -13d,
+                i.Value.Properties!.AmbientVolume ?? -5d,
+                i.Value.Properties!.CompressorAttack ?? 35d,
+                i.Value.Properties!.CompressorGain ?? 10d,
+                i.Value.Properties!.CompressorThreshold ?? -20d,
+                i.Value.Properties!.Distortion ?? 0.28d
+            ))
+            .ToFrozenDictionary(x => x.TemplateId);
 
     private FrozenDictionary<MongoId, FrozenSet<MongoId>> BuildTemplateBaseClasses() =>
         TemplateItemSlims.ToFrozenDictionary(

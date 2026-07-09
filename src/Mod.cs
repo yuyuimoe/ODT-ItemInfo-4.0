@@ -27,6 +27,7 @@ public class Mod(
             var resultBarterList = templateItemUtils.GetLocalizedBarterResultList(tplId);
             var requiredBarterList = templateItemUtils.GetLocalizedBarterResourceList(tplId);
             var slotRatio = templateItemUtils.GetLocalizedSlotRatio(tplId);
+            var headsetInfo = templateItemUtils.GetLocalizedHeadsetInfo(tplId);
             var hideoutAreaRequirement = templateItemUtils.GetLocalizedHideoutAreaRequirement(
                 tplId
             );
@@ -39,6 +40,7 @@ public class Mod(
                     string.Join(
                         "\n",
                         pricingInfo,
+                        headsetInfo,
                         resultBarterList,
                         requiredBarterList,
                         slotRatio,

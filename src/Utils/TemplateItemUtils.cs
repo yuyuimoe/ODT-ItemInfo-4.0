@@ -92,6 +92,19 @@ public class TemplateItemUtils(
         return string.Join(" | ", bestTrader, fleaPrice, handbookPrice);
     }
 
+    public string GetLocalizedHeadsetInfo(MongoId templateId)
+    {
+        if (!itemDataCache.TemplateHeadsetInfo.TryGetValue(templateId, out var headsetInfo))
+        {
+            return string.Empty;
+        }
+
+        var boost =
+            headsetInfo.CompressionGain + Math.Min(Math.Abs(headsetInfo.CompressorThreshold), 0);
+
+        return $"Ambient Volume: {headsetInfo.AmbientVolume} | Boost: {boost}dB | Distortion: {headsetInfo.Distortion * 100}";
+    }
+
     public List<string> GetLocalizedHideoutAreaRequirement(MongoId templateId)
     {
         if (!hideoutCache.AreaStageRequirementsByTemplate.TryGetValue(templateId, out var areas))
