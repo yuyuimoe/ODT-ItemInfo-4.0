@@ -102,7 +102,7 @@ public class TemplateItemUtils(
         var boost =
             headsetInfo.CompressionGain + Math.Min(Math.Abs(headsetInfo.CompressorThreshold), 0);
 
-        return $"Ambient Volume: {headsetInfo.AmbientVolume} | Boost: {boost}dB | Distortion: {headsetInfo.Distortion * 100}";
+        return $"Ambient Volume: {headsetInfo.AmbientVolume}dB | Boost: {boost}dB | Distortion: {headsetInfo.Distortion * 100}%";
     }
 
     public List<string> GetLocalizedHideoutAreaRequirement(MongoId templateId)
